@@ -13,3 +13,7 @@ VALUES
     ('sandra', '2sandy4me'),
     ('glamgal', 'soglam');
 
+
+
+SELECT users.id, users.name, users.location, posts.title, posts.content
+FROM users INNER JOIN posts ON posts.id = users.id;
