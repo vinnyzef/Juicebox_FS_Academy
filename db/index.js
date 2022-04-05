@@ -1,6 +1,8 @@
 const Client = require("pg").Client;
 
+
 const client = new Client("postgres://localhost:5432/juicebox-dev");
+
 
 /**
  * USER Methods
