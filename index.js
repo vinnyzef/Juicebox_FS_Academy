@@ -17,7 +17,6 @@ server.use((req, res, next) => {
 
   next();
 });
-// stuff above here
 
 const apiRouter = require("./api");
 server.use("/api", apiRouter);
