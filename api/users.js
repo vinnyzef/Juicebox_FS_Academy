@@ -3,6 +3,8 @@ const express = require("express");
 const usersRouter = express.Router();
 const { getAllUsers } = require("../db");
 const { getUserByUsername } = require("../db");
+const jwt = require("jsonwebtoken");
+const { token } = require("morgan");
 
 usersRouter.use((req, res, next) => {
   console.log("A request is being made to /users");
@@ -19,6 +21,11 @@ usersRouter.get("/", async (req, res) => {
 usersRouter.post("/login", async (req, res, next) => {
   const { username, password } = req.body;
 
+  //made jwt sign to grab token from sai user
+  const userToken = jwt.sign(
+    { id: 1, username: username },
+    process.env.JWT_SECRET
+  );
   // request must have both
   if (!username || !password) {
     next({
@@ -32,7 +39,7 @@ usersRouter.post("/login", async (req, res, next) => {
 
     if (user && user.password == password) {
       // create token & return to user
-      res.send({ message: "you're logged in!" });
+      res.send({ message: "you're logged in!", token: userToken });
     } else {
       next({
         name: "IncorrectCredentialsError",
