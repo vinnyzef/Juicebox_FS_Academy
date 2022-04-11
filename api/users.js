@@ -3,6 +3,7 @@ const express = require("express");
 const usersRouter = express.Router();
 const { getAllUsers } = require("../db");
 const { createUser } = require("../db");
+const { createPost } = require("../db");
 const { getUserByUsername } = require("../db");
 const jwt = require("jsonwebtoken");
 const { token } = require("morgan");
