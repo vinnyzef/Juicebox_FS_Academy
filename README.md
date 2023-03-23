@@ -12,9 +12,6 @@
 * Additionally, each day has starting code from the day before. Use this knowledge carefully, and try not to rely on the starting code too much, since it has the potential to jump you ahead of your current understanding of the materials.
 
 Also, there's not a great preview for this part of the project, so a screenshot is being omitted at this time.
-# Installation
-Clone the repository
-* Install the dependencies using npm install
-* Run the app using npm start
+
 # Contributions
 * Contributions and feedback are always welcome! Feel free to submit an issue or pull request if you have any suggestions or improvements for the website.
